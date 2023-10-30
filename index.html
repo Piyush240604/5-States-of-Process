@@ -1,0 +1,71 @@
+<!--5 States of Process-->
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Process State</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <link rel="stylesheet" href="mystyle.css">
+    </head>
+
+    <body>
+        <h1 id="title">5 States of Process</h1>
+
+        <div id = "representation">
+            <!--Input State-->
+            <div id="inputContainer">
+                <p>INPUT STATE</p>
+
+                <!--Input Buttons-->
+                <div class="buttonGrpInput">
+                    <button id="new" onclick="newProcess(0)">New</button>
+                    <button id="ready" onclick="readyProcess(0)">Ready</button>
+                    <button id="running" onclick="runningProcess(0)">Running</button>
+                    <button id="waiting" onclick="waitingProcess(0)">Waiting</button>
+                    <button id="terminated" onclick="terminatedProcess(0)">Terminated</button>
+                </div>
+            </div>
+
+            <!--Transition Type-->
+            <div id="transitionContainer">
+                <p>TRANSITION TYPE</p>
+
+                <!--Transition Buttons-->
+                <div class="buttonGrpTransition">
+                    <button id = "admitted" disabled="true" onclick="newProcess(1)">Admitted</button>
+                    <button id = "interrupt" disabled="true" onclick="runningProcess(1)">Interrupt</button>
+                    <button id = "event_completion" disabled="true" onclick="waitingProcess(1)">I/O or Event Completion</button>
+                    <button id = "scheduler_dispatch" disabled="true" onclick="readyProcess(1)">Scheduler Dispatch</button>
+                    <button id = "event_wait" disabled="true" onclick="runningProcess(2)">I/O or Event Wait</button>
+                    <button id = "exit" disabled="true" onclick="runningProcess(3)">Exit</button>
+                </div>
+            </div>
+
+            <!--Target State-->
+            <div id="targetContainer">
+                <h2>TARGET STATE: </h2>
+                <h2 id="target_state"></h2>
+            </div>
+
+            <!--RESET BUTTON-->
+            <button id="reset" onclick="reset()">RESET</button>
+        </div>
+
+        <div id="referenceContainer">
+            <h1>The Image Below shows the states of Process</h1>
+            <img id="statespng" src="ProcessState.png">
+        </div>
+
+        <div id="explanationContainer">
+            <h2>Explanation: </h2>
+            
+            <div id="explanation">
+                <h2 id="explanationText" style="color:#009900"></h2>
+            </div>
+        </div>
+
+        
+    </body>
+
+    <script src="myscript.js"></script>
+</html>
